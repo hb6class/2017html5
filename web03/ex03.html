@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .fcontainer{
+            width: 100%;
+            
+        }
+        .grid01,.grid02,.grid03,
+        .grid04,.grid05,.grid06,
+        .grid07,.grid08,.grid09,
+        .grid10,.grid11,.grid12{
+            float: left;
+        }
+        .grid12{
+            width: 100%;
+        }
+        .grid01{
+            width: 8.333%;
+        }
+        .grid02{/*100/(12/2)*/
+            width: 16.666%;
+        }
+        .grid03{/*100/(12/3)*/
+            width: 25%;
+        }
+        .grid04{/*100/(12/4)*/
+            width: 33.333%;
+        }
+        .grid05{/*100/(12/5)*/
+            width: 41.66%;
+        }
+        .grid06{/*100/(12/6)*/
+            width: 50%;
+        }
+        .grid07{/*100/(12/7)=100*7/12*/
+            width: 58.33%;
+        }
+        .grid08{/*100/(12/8)=100*8/12*/
+            width: 66.66%;
+        }
+        .grid09{/*100/(12/9)=100*9/12*/
+            width: 75%;
+        }
+        .grid10{/*100/(12/10)=100*10/12*/
+            width: 83.33%;
+        }
+        .grid11{/*100/(12/11)=100*11/12*/
+            width: 91.66%;
+        }
+        .row{
+            clear: both;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="fcontainer">
+        <div class="row">
+            <div class="grid12">12</div>
+        </div>
+        <div class="row">
+            <div class="grid01">1</div>
+            <div class="grid11">11</div>
+        </div>
+        <div class="row">
+            <div class="grid02">2</div>
+            <div class="grid10">10</div>
+        </div>
+        <div class="row">
+            <div class="grid03">3</div>
+            <div class="grid09">9</div>
+        </div>
+        <div class="row">
+            <div class="grid04">4</div>
+            <div class="grid08">8</div>
+        </div>
+        <div class="row">
+            <div class="grid05">5</div>
+            <div class="grid07">7</div>
+        </div>
+        <div class="row">
+            <div class="grid06">6</div>
+            <div class="grid06">6</div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
