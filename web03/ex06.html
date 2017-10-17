@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*public*/
+        /*mobile*/
+        @media screen and (max-width:959px){
+            .mcontainer{
+                width: 100%;
+
+            }
+            .mnone{
+                display: none;
+            }
+            .mgrid01,.mgrid02,.mgrid03,
+            .mgrid04,.mgrid05,.mgrid06,
+            .mgrid07,.mgrid08,.mgrid09,
+            .mgrid10,.mgrid11,.mgrid12{
+                float: left;
+            }
+            .mgrid12{
+                width: 100%;
+            }
+            .mgrid01{
+                width: 8.333%;
+            }
+            .mgrid02{/*100/(12/2)*/
+                width: 16.666%;
+            }
+            .mgrid03{/*100/(12/3)*/
+                width: 25%;
+            }
+            .mgrid04{/*100/(12/4)*/
+                width: 33.333%;
+            }
+            .mgrid05{/*100/(12/5)*/
+                width: 41.66%;
+            }
+            .mgrid06{/*100/(12/6)*/
+                width: 50%;
+            }
+            .mgrid07{/*100/(12/7)=100*7/12*/
+                width: 58.33%;
+            }
+            .mgrid08{/*100/(12/8)=100*8/12*/
+                width: 66.66%;
+            }
+            .mgrid09{/*100/(12/9)=100*9/12*/
+                width: 75%;
+            }
+            .mgrid10{/*100/(12/10)=100*10/12*/
+                width: 83.33%;
+            }
+            .mgrid11{/*100/(12/11)=100*11/12*/
+                width: 91.66%;
+            }
+        }
+        /*pc*/
+        @media screen and (min-width:960px){
+            .container{
+                margin: 0px auto;
+                padding: 0px;
+                width: 960px;
+            }
+            .none{
+                display: none;
+            }
+            .grid01,.grid02,.grid03,.grid04,.grid05
+            ,.grid06,.grid07,.grid08,.grid09,.grid10
+            ,.grid11,.grid12{
+                float: left;
+                /*border-color: deeppink;
+                border-style: dotted;
+                border-width: 1px;
+                box-sizing: border-box;*/
+            }
+            .grid01{
+                width: 80px;
+            }
+            .grid02{
+                width: 160px;
+            }
+            .grid03{
+                width: 240px;
+            }
+            .grid04{
+                width: 320px;
+            }
+            .grid05{
+                width: 400px;
+            }
+            .grid06{
+                width: 480px;
+            }
+            .grid07{
+                width: 560px;
+            }
+            .grid08{
+                width: 640px;
+            }
+            .grid09{
+                width: 720px;
+            }
+            .grid10{
+                width: 800px;
+            }
+            .grid11{
+                width: 880px;
+            }
+            .grid12{
+                width: 960px;
+            }
+        }
+        
+        .btn{
+            width: 25px;
+            height: 25px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            display: inline-block;
+            float: right;
+        }
+        .btn>span{
+            border: 1px solid gray;
+            display: block;
+            margin: 5px;
+        }
+        .items{
+            background-color: gray;
+        }
+        .row{
+            clear: both;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mcontainer">
+        <div class="row">
+            <div class="grid12 mgrid12">
+                <h1>한빛교육센터</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="none mgrid12">
+                메뉴
+                <div class="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                </div>
+            </div>
+            <div class="grid02 mnone">&nbsp;</div>
+            <div class="grid02 mgrid12 items">
+                <a href="#">menu1</a>
+            </div>
+            <div class="grid02 mgrid12 items">
+                <a href="#">menu2</a>
+            </div>
+            <div class="grid02 mgrid12 items">
+                <a href="#">menu3</a>
+            </div>
+            <div class="grid02 mgrid12 items">
+                <a href="#">menu4</a>
+            </div>
+            <div class="grid02 mnone">&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
