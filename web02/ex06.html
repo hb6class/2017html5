@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            /*border: 1px solid red;*/
+            /*border-radius: 10px;*/
+            border-right: 1px solid red;
+            border-left: 1px solid red;
+        }
+        div:nth-child(1){
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border-top: 1px solid red;
+        }
+        div:nth-child(2n){
+            background-color: yellow;
+        }
+        div:last-child{
+            border-bottom: 1px solid red;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div,span{
+            width: 100px;
+            height: 100px;
+        }
+        div:nth-child(1),span:nth-child(6){
+            background-color: #ff0000;
+            display: inline-block;
+            opacity:0;
+        }
+        div:nth-child(2),span:nth-child(7){
+            background-color: #00ff00;
+            display: inline-block;
+        }
+        div:nth-child(3),span:nth-child(8){
+            background-color: #0000ff;
+        }
+        div:nth-child(4),span:nth-child(9){
+            background-color: #ffff00;
+            /*visibility: hidden;*/
+            display: none;
+        }
+        div:nth-child(5),span:nth-child(10){
+            background-color: #ff00ff;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+</body>
+</html>

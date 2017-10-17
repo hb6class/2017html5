@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 98px;
+            height: 98px;
+            position: relative;
+            background-image: url(imgs/ball.jpg);
+            animation-delay: 1s;
+            animation-name: ani01;
+            animation-duration: 2s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        div:hover{
+            animation-play-state: paused;
+        }
+        
+        @keyframes ani01{
+            from{
+                left: 0px;
+                top: 0px;
+                transform: rotate(0deg);
+            }
+            to{
+                left: 200px;
+                top: 200px;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>
