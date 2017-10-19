@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    // 제어문
+    // 1.조건문
+        var a= true;
+       if(!a){
+           console.log("참입니다");
+       } else {
+           console.log("거짓입니다");
+       }
+        var b=20;
+        switch(b){
+            case 0: console.log("0입니다");break;
+            case 1: console.log("1입니다");break;
+            case 2: console.log("2입니다");break;
+            case 3: console.log("3입니다");break;
+                default :console.log("0~3아닙니다");
+                }
+    // 2.반복문
+        var sum=0;
+        /*for(var i=0; i<10; i++){
+            sum+=i;
+        }*/
+        var i=0;
+        /*while(i<5){
+              sum+=i;
+                i++;
+              }*/
+        do{
+            sum+=i;
+            i++;
+        }while(i<20);
+        console.log("합계는"+sum);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
