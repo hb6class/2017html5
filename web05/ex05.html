@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function newObj(){
+                var stu={
+                    'num':0,
+                    'kor':0,
+                    'eng':0,
+                    'setNum':function(a){
+                        this.num=a;
+                    },
+                    'setKor':function(a){
+                        this.kor=a;
+                    },
+                    'setEng':function(a){
+                        this.eng=a;
+                    },
+                    'getNum':function(){
+                        return this.num;
+                    },
+                    'getKor':function(){
+                        return this.kor;
+                    },
+                    'getEng':function(){
+                        return this.eng;
+                    }
+                };
+          return stu; 
+        }
+    function func01(a){
+        document.write("<table>");
+        document.write("<tr>");
+        document.write("<td>학번</td>");
+        document.write("<td>국어</td>");
+        document.write("<td>영어</td>");
+        document.write("</tr>");
+        for(var i=0; a.length; i++){
+        document.write("<tr>");
+        document.write("<td>"+a[i].getNum()+"</td>");
+        document.write("<td>"+a[i].getKor()+"</td>");
+        document.write("<td>"+a[i].getEng()+"</td>");
+        document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+    
+    var students=new Array();
+    
+    var obj=newObj();
+        obj.setNum(1111);
+        obj.setKor(90);
+        obj.setEng(80);
+    students.push(obj);
+        
+    obj=newObj();
+        obj.setNum(2222);
+        obj.setKor(50);
+        obj.setEng(60);
+    students.push(obj);
+        
+    obj=newObj();
+        obj.setNum(3333);
+        obj.setKor(10);
+        obj.setEng(20);
+    students.push(obj);
+    
+    func01(students);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

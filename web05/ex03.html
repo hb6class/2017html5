@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 콜백함수 */
+        var func01=function (){
+            alert('func01 run');
+        };
+        
+        function func02(a){
+            /*~~~~~~*/
+            a();
+        }
+        
+        func02(func01);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    var obj=1111;
+    var obj2=2222;
+    function func01(a){
+        return {
+            'getter':function(){
+                return a;
+            },
+            'setter':function(b){
+                a=b;
+            }
+        };
+    }
+    
+    func01(obj).setter(obj2);
+    alert(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
