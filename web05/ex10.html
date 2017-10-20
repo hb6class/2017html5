@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본함수</title>
+    <script>
+//    window.alert('test');
+//    var msg=window.prompt("입력메시지",1000);
+//    var result=window.confirm("종료하시겠습니까?");
+//        window.setInterval
+//        window.setTimeout
+    function func1(){
+        var date=new Date();
+        var msg=date.getYear()+1900+"년";
+        msg+='&nbsp;';
+        msg+=date.getMonth()+1+"월";
+        msg+='&nbsp;';
+        msg+=date.getDate()+"일";
+        msg+='&nbsp;';
+        msg+=date.getHours()+"시";
+        msg+='&nbsp;';
+        msg+=date.getMinutes()+"분";
+        msg+='&nbsp;';
+        msg+=date.getSeconds()+"초";
+        document.write('<p>'+msg+'</p>');
+    }
+    var loop= window.setInterval(func1,1000);  
+    
+    var loopEnd=function (){
+        window.clearInterval(loop);
+    };
+    window.setTimeout(loopEnd,5000);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
