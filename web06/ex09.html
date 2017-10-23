@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img alt="img" src="imgs/big01.jpg"/>
+</body>
+    <script>
+    var img=document.firstElementChild.lastElementChild.firstElementChild;
+    var num=1;
+    function loop(){
+        if(num<5){
+            num++;
+           }else{
+            num=1;
+           }
+        img.src='imgs/big0'+num+'.jpg';    
+    }
+    window.setInterval(loop,3000);
+    </script>
+</html>

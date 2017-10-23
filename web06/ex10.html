@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <div>
+      <h2>div->h2</h2>
+       <div>
+          <h2>div->div->h2</h2> 
+       </div>
+       
+   </div>
+   <img src="imgs/big01.jpg"/>
+   <a href="ex01.html">link</a>
+    <h1 id='title'>제목</h1>
+    <p>내용</p>
+    <h2 class="title2">소제목1</h2>
+    <p class="content1">내용</p>
+    <h2>소제목2</h2>
+    <p class="content1">내용</p>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+        <li>menu7</li>
+        <li>menu8</li>
+        <li>menu9</li>
+        <li>menu10</li>
+    </ul>
+    <script>
+        var link=document.querySelector("a");
+        link.setAttribute('href','ex02.html');
+//        alert(link.getAttribute('href'));
+//    var h1=document.querySelector("h1");
+//    h1.style.backgroundColor='rgb(255,255,255)';
+//    h1.style.borderBottomColor='#000000';
+//    h1.style.borderBottomStyle='solid';
+//    h1.style.borderBottomWidth='1px';
+        
+        
+    var lis=document.querySelectorAll("li");
+        lis.forEach(function(ele,idx){
+    ele.style.backgroundColor='rgb('+idx*10+',0,0)';
+        });
+//    for(var a=0; a<lis.length; a++){
+//        lis[a].innerText="aaaa";
+//    }
+//    for(var ele of lis){
+//        ele.innerText='bbbb';
+//    }
+        
+//    var h1=document.getElementById("title");
+//   
+//        function func(){
+//            var d = new Date();
+//            var msg=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+//            h1.innerText=msg;
+//        }
+//    
+//    window.setInterval(func,1000);    
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
