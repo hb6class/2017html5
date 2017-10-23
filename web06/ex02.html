@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    //window.location.replace("http://naver.com");
+    /*var msg=window.location.href;
+        alert(msg);*/
+        //alert(window.location);
+    /*
+    http://127.0.0.1:49889/web06/ex02.html?name=abcd#top
+    프로퍼티
+    protocol http:
+    hostname 127.0.0.1
+    port 49889
+    pathname /web06/ex02.html
+    search ?name=abcd
+    hash #top
+    메서드
+    replace(url)-url주소로 이동
+    assign(url) -url주소로 이동
+    reload() -새로고침
+    */    
+    var loc=window.location;
+        for(var key in loc){
+            console.log(key,loc[key]);
+        }
+        
+        
+        /*function Func(){
+            this.name='test';
+            this.toString=function(){
+                return this.name;
+            };
+        }
+        
+        var temp = new Func();
+        alert(temp);*/
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

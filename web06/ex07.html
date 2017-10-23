@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+var frame;  
+function func(){
+frame=window.open("ex01.html",'fname','width=200, height=200,status=yes, toolbar=yes, menubar=yes, resizable=no',true);
+    
+    frame.document.write("<h1>popup</h1>");
+    
+}
+    
+    </script>
+</head>
+<body>
+    <button onclick="func();">팝업</button>
+</body>
+</html>
