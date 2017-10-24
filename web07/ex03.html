@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+    <script>
+    var input1,input2,input3,errs;
+    
+function loading(){
+    input1=document.getElementById('id');
+    input2=document.getElementById('pw');
+    input3=document.getElementById('re');
+    errs=document.getElementsByTagName('span');
+}   
+//id - 4이상~6자 이하,첫글자 영문        
+//id,pw - 값이 비었음
+
+function send(){
+    
+    errs[0].innerText="";
+    errs[1].innerText="";
+    errs[2].innerText="";
+    
+    var msg='id:'+input1.value;
+    msg+='\npw:'+input2.value;
+    msg+='\nre:'+input3.value;
+    //alert(msg);
+    if(input1.value==''){
+        errs[0].innerText='id가 비었음';
+        return false;
+    }
+    var val1=input1.value;
+    if(val1.length<4 || val1.length>6){
+        errs[0].innerText='4이상~6자 이하';
+        return false;
+    }
+    //alert(val1.charCodeAt(0));
+    if(val1.charCodeAt(0)<65||val1.charCodeAt(0)>'z'.charCodeAt(0)){
+        errs[0].innerText='첫글자는 영문으로';
+        return false;
+    }
+    if(input2.value==''){
+        errs[1].innerText='pw가 비었음';
+        return false;
+    }
+    if(input3.value==''){
+        errs[2].innerText='pw를 다시한번 입력바람';
+        return false;
+    }
+    if(input2.value!=input3.value){
+        errs[2].innerText='패스워드 불일치';
+        return false;    
+    }
+    
+    return true;
+}
+
+    </script>
+</head>
+<body onload="loading();">
+    <h1>회원가입</h1>
+    <form action="ex01.html" onsubmit="return send();">
+        <p>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id"/>
+            <span></span>
+        </p>
+        <p>
+            <label for="pw">pw</label>
+            <input type="text" id="pw" name="pw"/>
+            <span></span>
+        </p>
+        <p>
+            <label for="re">re</label>
+            <input type="text" id="re"/>
+            <span></span>
+        </p>
+        
+        <p>
+            <button type="submit">가입</button>
+            <button type="reset">취소</button>
+        </p>        
+    </form>
+</body>
+</html>

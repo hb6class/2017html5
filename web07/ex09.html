@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    var myload=function(){
+  
+var btn1=document.querySelectorAll('button')[0];
+var btn2=document.querySelectorAll('button')[1];
+    //window.navigator
+    //익스-btn.attachEvent('',fn);
+    var callback=function(){
+        alert('클릭');
+    };
+    var callback2=function(){
+        console.log("클릭");
+    };
+    btn1.addEventListener('click',callback);
+    btn1.addEventListener('click',callback2);
+    btn2.addEventListener('click',function(){
+        btn1.removeEventListener('click',callback);
+    });
+        
+    };
+    
+    window.addEventListener('load',myload);
+    
+    </script>
+</head>
+<body>
+    <button>btn</button>
+    <button>remove</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

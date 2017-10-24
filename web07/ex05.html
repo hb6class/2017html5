@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+window.onload=function(){
+    var btn3=document.querySelector('button[type=button]');
+    var form=document.querySelector('form');
+    var select=document.querySelector('select');
+    var id=document.querySelector('#id');
+    var pw=document.querySelector('#pw');
+    var re=document.querySelector('#re');
+    var spans=document.querySelectorAll('span');
+    
+    function nullChk(ele){
+        return ele.value=='';
+    }
+    var chk4=true;
+    
+    var selectFunc=function(){
+        chk4=false;
+        var msg="<option>item1</option>";
+        msg+="<option>item2</option>";
+        msg+="<option>item3</option>";
+        msg+="<option>item4</option>";
+        select.innerHTML=msg;
+    };
+    
+    select.onfocus=selectFunc;
+    select.onclick=selectFunc;
+    
+    form.onsubmit=function(){
+        spans[0].innerText='';
+        spans[1].innerText='';
+        spans[2].innerText='';
+        if(nullChk(id)){
+            spans[0].innerText='비었음';
+            return false;
+        }
+        if(nullChk(pw)){
+            spans[1].innerText='비었음';
+            return false;
+        }
+        if(nullChk(re)){
+            spans[2].innerText='비었음';
+            return false;
+        }
+        if(chk4){
+            spans[3].innerText='선택하세요';
+            return false;
+        }
+    };
+    btn3.onclick=function(){
+        window.history.back();
+    };
+};    
+    
+    
+    </script>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="ex01.html">
+        <p>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id"/>
+            <span></span>
+        </p>
+        <p>
+            <label for="pw">pw</label>
+            <input type="text" id="pw" name="pw"/>
+            <span></span>
+        </p>
+        <p>
+            <label for="re">re</label>
+            <input type="text" id="re"/>
+            <span></span>
+        </p>
+        <p>
+            <label for="list">list</label>
+            <select name="list">
+                <option>선택하세요</option>
+            </select>
+            <span></span>
+        </p>
+        <p>
+            <input type="checkbox" id="item1" name="item1"/>
+            <label for="item1">item1</label>
+            <input type="checkbox" id="item2" name="item2"/>
+            <label for="item2">item2</label>
+            <input type="checkbox" id="item3" name="item3"/>
+            <label for="item3">item3</label>
+        </p>
+        <P>
+            <button type="submit">입력</button>
+            <button type="reset">취소</button>
+            <button type="button">뒤로</button>
+        </P>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

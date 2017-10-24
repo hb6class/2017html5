@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+var id,pw;
+function loading(){
+    id=document.getElementsByTagName("input")[0];
+    pw=document.getElementsByTagName("input")[1];
+    targetID=document.getElementsByTagName("p")[0];
+    taragetPW=document.getElementsByTagName("p")[1];
+}
+function input(){
+    //alert("id:"+id.value+"\npw:"+pw.value);
+    targetID.innerText=targetID.innerText+id.value;
+    taragetPW.innerText=taragetPW.innerText+pw.value;
+}
+    </script>
+</head>
+<body onload="loading();">
+    <div>
+        <h1>입력내용</h1>
+        <p>id:</p>
+        <p>pw:</p>
+    </div>
+    <div>
+        <p>
+            id<input type="text"/>
+        </p>
+        <p>
+            pw<input type="text"/>
+        </p>
+        <p>
+            <input type="button" onclick="input();" value="입력"/>
+        </p>
+        
+    </div>
+    
+</body>
+</html>

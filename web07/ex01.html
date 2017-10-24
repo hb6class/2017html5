@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var h1=null;
+        var p=null;
+    function loading(){
+        h1=document.getElementsByTagName('h1')[0];
+        p=document.getElementsByTagName('p')[0];
+    }
+    function func01(msg1,msg2){
+        h1.innerText=msg1;
+        p.innerText=msg2;
+        
+    }
+        //window.func01=function(){};
+    
+    </script>
+</head>
+<body onload="loading();">
+    <h1>제목</h1>
+    <p>내용</p>
+    <input type="button" onclick="func01('이벤트','이벤트로 작성되었습니다');" value="작성"/>
+</body>
+</html>

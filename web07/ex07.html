@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        div:nth-child(2){
+            background-color: antiquewhite;
+        }
+        div:nth-child(3){
+            background-color: azure;
+        }
+        div:nth-child(4){
+            width: 300px;
+            height: 500px;
+            float: right;
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+    window.onload=function(){
+var btn1=document.querySelectorAll("button")[0];
+var div1=document.querySelectorAll("div")[0];
+var div3=document.querySelectorAll("div")[2];
+var input=document.querySelector("input");
+var chkbox=document.querySelector("#chk");
+var select=document.querySelector("select");
+var btn=document.querySelector("#btn");
+        
+//    div1.onclick=function(){
+//        div3.innerHTML+='마우스 클릭<br/>';
+//    };
+//    div1.onmouseover=function(){
+//        div3.innerHTML+='마우스 오버<br/>';
+//    };
+//    div1.onmouseout=function(){
+//        div3.innerHTML+='마우스 빠져나감<br/>';
+//    };
+//    div1.onmouseup=function(){
+//        div3.innerHTML+='마우스버튼 위로<br/>';
+//    };
+//    div1.onmousedown=function(){
+//        div3.innerHTML+='마우스버튼 아래로<br/>';
+//    };
+//    div1.onmousemove=function(e){
+//        for(var key in e){
+//            div3.innerHTML+=key+':'+e[key]+'<br/>';
+//        }
+//        div3.innerHTML+=e.offsetX+':'+e.offsetY+'<br/>';
+//    };
+      
+        
+//input.onkeydown=function(e){
+//    div3.innerHTML+=e.key+'<br/>';
+//};
+//document.onkeyup=function(e){
+//    div3.innerHTML+=e.key+'<br/>';
+//};
+//input.onkeypress=function(e){
+////    for(var key in e){
+////    div3.innerHTML+=key+':'+e[key]+'<br/>';
+////    }
+//};    
+        chkbox.onchange=function(){
+            div3.innerHTML+='chkbox 상태변화<br/>';
+        }; 
+        select.onchange=function(){
+            div3.innerHTML+='select 상태변화<br/>';
+        };
+        input.onchange=function(){
+            div3.innerHTML+='텍스트필드 상태변화<br/>';
+        };
+        input.onfocus=function(){
+            div3.innerHTML+='텍스트필드 포커스<br/>';
+        };
+        input.onblur=function(){
+            div3.innerHTML+='텍스트필드 포커스아웃<br/>';
+        };
+        
+    };
+    
+    </script>
+</head>
+<body>
+    <h1>이벤트 종류</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>
+        <input type="text"/>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <input id="chk" type="checkbox"/>ch1
+        <input type="button" id="btn" value="btn">
+    </p>
+    <p>
+        <button>btn1</button>
+        <button>btn2</button>
+        <button>btn3</button>
+        <button>btn4</button>
+    </p>
+</body>
+</html>
