@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function (){
+		var inputs=document.querySelectorAll("input");
+		var btn=document.querySelector("button");
+		var h1=document.querySelector("div>h1");
+		var p=document.querySelector("div>h1+p");
+		
+		var callBack=function(){
+			h1.innerText=inputs[0].value;
+			p.innerText=inputs[1].value;
+		};
+		
+		btn.addEventListener('click',callBack);
+	};
+</script>
+</head>
+<body>
+	<div>
+		<p>제목:<input type="text" /></p>
+		<p>내용:<input type="text" /></p>
+		<p><button>입력</button></p>
+	</div>
+	<div>
+		<h1>제목</h1>
+		<p>내용</p>
+	</div>
+</body>
+</html>

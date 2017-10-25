@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#menu{
+		background-color: gray;
+		overflow: hidden;
+	}
+	#menu>ul{
+		padding: 0px;
+		width: 400px;
+		margin: 0px auto;
+	}
+	#menu>ul>li{
+		color: white;
+		text-align: center;
+		float: left;
+		width: 100px;
+		height: 40px;
+		list-style: none;
+		line-height: 40px;
+	}
+	#menu>ul>li>ul{
+		padding: 0px;
+		display: none;
+		position: absolute;
+	}
+	#menu>ul>li>ul>li{
+		text-align: center;
+		list-style: none;
+		background-color: gray;
+		width: 100px;
+		
+	}
+	#menu>ul>li>ul>li>a{
+		color: white;
+		text-decoration: none;
+	}
+	#menu>ul>li>ul>li:hover{
+		background-color: red;
+		
+	}
+	#content{
+		clear: both;
+	}
+	#content>h1{
+		clear: both;
+	}
+	#content>#imgBanner{
+		border: 1px solid gray;
+		overflow: hidden;
+		width: 390px;
+		position: relative;
+		margin: 50px auto;
+	}
+	#content>#imgBanner>ul{
+	}
+	#content>#imgBanner>ul>li{
+		list-style: none;
+		float: left;
+		/* display: none; */
+	}
+	#content>#imgBanner>ul>li>img{
+		width: 100px;
+		height: 100px;
+	}
+	#content>#imgBanner>a{
+		display:inline-block;
+		width:50px;
+		height:50px;
+		border-radius:25px;
+		background-color: red;
+		line-height: 50px;
+		text-decoration: none;
+		text-align: center;
+		position: absolute;
+		top: 50px;
+	}
+	#content>#imgBanner>a:nth-child(2){
+		left: 0px;
+	}
+</style>
+<script type="text/javascript">
+	var mnshow=false;
+	var bignum=1;
+	window.onload=function(){
+		var mns=document.querySelectorAll("#menu>ul>li");
+		var uls=document.querySelectorAll("#menu>ul>li>ul");
+		var imgs=document.querySelectorAll("#imgBanner img");
+		var prv=document.querySelectorAll("#imgBanner a")[0];
+		var nxt=document.querySelectorAll("#imgBanner a")[1];
+		
+		
+		var banner=function(){
+			for(var i=0; i<imgs.length; i++){
+				imgs[i].style.display='none';
+			}
+			imgs[bignum-1].style.display='block';
+			imgs[bignum].style.display='block';
+			imgs[bignum+1].style.display='block';
+		};
+		banner();
+		
+		nxt.onclick=function(){
+			if(bignum<imgs.length-2)bignum++;
+			else bignum=1;
+			banner();
+			return false;
+		};
+		var next=function(){
+			nxt.onclick();
+		};
+		window.setInterval(next, 1000);
+		/* 
+		var banner=function(){
+			for(var i=0; i<imgs.length; i++){
+				imgs[i].style.display='none';
+			}
+			imgs[bignum-1].style.display='block';
+			imgs[bignum].style.display='block';
+			imgs[bignum+1].style.display='block';
+			
+			if(bignum<imgs.length-2)bignum++;
+			else bignum=1;
+			window.setTimeout(banner, 1000);
+		};
+		banner();
+		 */
+		/* var chgBic=function(){
+			if(bignum<5)bignum++;
+			else bignum=1;
+			big.setAttribute('src', 'imgs/big0'+bignum+'.jpg');
+		};
+		
+		window.setInterval(chgBic, 1000); */
+		var bigs=document.querySelectorAll('#imgBanner>ul>li');
+		
+		
+		mns[0].onmouseover=function(){
+			uls[0].style.display="block";
+		};
+		mns[0].onmouseout=function(){
+			uls[0].style.display="none";
+		};
+		mns[1].onmouseover=function(){
+			uls[1].style.display="block";
+		};
+		mns[1].onmouseout=function(){
+			uls[1].style.display="none";
+		};
+		mns[2].onmouseover=function(){
+			uls[2].style.display="block";
+		};
+		mns[2].onmouseout=function(){
+			uls[2].style.display="none";
+		};
+		mns[3].onmouseover=function(){
+			uls[3].style.display="block";
+		};
+		mns[3].onmouseout=function(){
+			uls[3].style.display="none";
+		};
+		
+		
+		/* mns[0].onclick=function(){
+			if(mnshow){
+				uls[0].style.display="none";
+				mnshow=false;
+			}else{
+				uls[0].style.display="block";
+				mnshow=true;
+			}
+			//alert("클릭");
+		}; */
+		
+	};
+
+</script>
+
+</head>
+<body>
+	<div id="header">
+		<h1>한빛교육센터</h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li>
+				MENU1
+				<ul>
+					<li><a href="#">menu1-1</a></li>
+					<li><a href="#">menu1-2</a></li>
+					<li><a href="#">menu1-3</a></li>
+					<li><a href="#">menu1-4</a></li>
+				</ul>
+			</li>
+			<li>
+				MENU2
+				<ul>
+					<li><a href="#">menu2-1</a></li>
+					<li><a href="#">menu2-2</a></li>
+					<li><a href="#">menu2-3</a></li>
+					<li><a href="#">menu2-4</a></li>
+				</ul>
+			</li>
+			<li>
+				MENU3
+				<ul>
+					<li><a href="#">menu3-1</a></li>
+					<li><a href="#">menu3-2</a></li>
+					<li><a href="#">menu3-3</a></li>
+					<li><a href="#">menu3-4</a></li>
+				</ul>
+			</li>
+			<li>
+				MENU4
+				<ul>
+					<li><a href="#">menu4-1</a></li>
+					<li><a href="#">menu4-2</a></li>
+					<li><a href="#">menu4-3</a></li>
+					<li><a href="#">menu4-4</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="imgBanner">
+			<ul>
+				<li><img alt="img01" src="imgs/img01.jpg"/></li>
+				<li><img alt="img02" src="imgs/img02.jpg"/></li>
+				<li><img alt="img03" src="imgs/img03.jpg"/></li>
+				<li><img alt="img04" src="imgs/img04.jpg"/></li>
+				<li><img alt="img05" src="imgs/img05.jpg"/></li>
+				<li><img alt="img01" src="imgs/img01.jpg"/></li>
+				<li><img alt="img02" src="imgs/img02.jpg"/></li>
+			</ul>
+			<a href="#">prev</a>
+			<a href="#">next</a>
+		</div>
+		<h1>제목</h1>
+		<p>내용</p>
+	</div>
+	<div id="footer">
+	(주)한빛이엔아이 ｜ 사업자등록번호 : 220-85-43667 ｜ 통신판매신고 : 마포 제 0358호
+한빛ENI : 02-707-1480 / (121-854) 서울시 마포구 신수동 63-14 구프라자 3층 / 대표이사 : 염기호
+개인정보보호관리책임자 : 허윤
+Copyright (c) 2015 한빛교육센터 All rights reserved.
+	</div>
+</body>
+</html>
