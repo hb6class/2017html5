@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var ul,xhr;
+	window.onload=function(){
+		ul=document.querySelector('ul');
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var xml=xhr.responseXML;
+				var a=1;
+				/* while(xml.childNodes[0].childNodes[a]){
+					var b=0;
+					while(xml.childNodes[0].childNodes[a].childNodes[b]){
+						var ele=xml.childNodes[0].childNodes[a].childNodes[b].childNodes[0];
+						console.log(a,b,ele);
+						b++;
+					}
+					a++;
+				} */
+				while(xml.childNodes[0].childNodes[a]){
+					var img=xml.childNodes[0].childNodes[a];
+					var dir=img.childNodes[1].childNodes[0].nodeValue;
+					var name=img.childNodes[3].childNodes[0].nodeValue;
+					var tag=img.childNodes[5].childNodes[0].nodeValue;
+					ul.innerHTML+='<li><img src="'+dir+"/"+name+'.'+tag+'"/></li>'
+					a++;
+					a++;
+				}
+				
+				
+			}
+		};
+		xhr.open('get','ex04.xml',true);
+		xhr.send();
+	};
+
+</script>
+</head>
+<body>
+	<ul></ul>
+</body>
+</html>

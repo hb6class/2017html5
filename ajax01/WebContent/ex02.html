@@ -32,7 +32,31 @@
 function callBack(e){
 	if(xhr.readyState==4){
 		if(xhr.status==200){
-			p.innerHTML=xhr.responseText;
+			//p.innerHTML=xhr.responseText;
+			/* 
+			var xml=xhr.responseXML;
+			var result=xml.childNodes[0].childNodes[1].childNodes[1].childNodes[0].nodeValue;
+			if(result=='true'){
+				var username=xml.childNodes[0].childNodes[1].childNodes[3].childNodes[0].nodeValue;
+				p.innerHTML=username+"님 환영합니다";
+			}else{
+				alert("id,pw 확인하세요");
+			} 
+			*/
+			
+			var msg=xhr.responseText;
+			var obj=JSON.parse(msg);
+			var arr=obj['root'];
+			/*
+			for(var i=0; i<arr.length; i++){
+				alert(arr[i]['username']);
+			} */
+			alert(obj.root[0].result);
+			if(arr[0].result){
+				p.innerHTML=arr[0].username+"님 환영합니다";
+			}else{
+				alert("id,pw 재확인");
+			}
 		}else{
 			alert("통신오류");
 		}
@@ -42,7 +66,7 @@ function callBack(e){
 function http(){
 	xhr=new XMLHttpRequest();
 	var method='GET';
-	var url='ex03.jsp?id='+inputs[0].value+'&pw='+inputs[1].value;
+	var url='ex07.json';//'ex05.jsp?id='+inputs[0].value+'&pw='+inputs[1].value;
 	var async=true;
 	xhr.onreadystatechange=callBack;
 	xhr.open(method, url, async);
@@ -52,6 +76,8 @@ function http(){
 window.onload=function(){
 	var link=document.querySelector("#header>div>p>button");
 	inputs=document.querySelectorAll("#header input");
+	img=document.querySelector("#content img");
+	http2();
 	p=document.querySelector("#header>div");
 	link.onclick=function(){
 	http();
@@ -59,6 +85,34 @@ window.onload=function(){
 	};
 	
 };
+var img;
+var arr=new Array();
+arr.p
+function myloading(){
+	var name=arr.pop();
+	img.src='imgs/'+name+'.jpg';
+	//앞에다 넣음
+	window.setTimeout(myloading,1000);
+}
+function http2(){
+	xhr=new XMLHttpRequest();
+	var method='GET';
+	var url='ex04.xml';
+	var async=true;
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var xml=xhr.responseXML;
+			var i=0;
+				while(xml.childNodes[0].childNodes[i]){
+					if(xml.childNodes[0].childNodes[i].childNodes[1])arr.push(xml.childNodes[0].childNodes[i].childNodes[3].childNodes[0].nodeValue);
+					i++;
+				}
+				myloading();
+		}
+	};
+	xhr.open(method, url, async);
+	xhr.send();
+}
 
 </script>
 </head>

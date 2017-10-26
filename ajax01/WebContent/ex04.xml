@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imgs>
+	<img>
+		<dir>imgs</dir>
+		<name>big01</name>
+		<tag>jpg</tag>
+	</img>
+	<img>
+		<dir>imgs</dir>
+		<name>big02</name>
+		<tag>jpg</tag>
+	</img>
+	<img>
+		<dir>imgs</dir>
+		<name>big03</name>
+		<tag>jpg</tag>
+	</img>
+</imgs>
