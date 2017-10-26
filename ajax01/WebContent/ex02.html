@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#header{
+		background-image: url("imgs/logo.jpg");
+		background-repeat: no-repeat;
+		height: 62px;
+	}
+	#header>div{
+		float: right;
+	}
+	#header>div>p{
+		margin: 5px;
+	}
+	#menu,#footer{
+		background-color: gray;
+	}
+	
+</style>
+<script type="text/javascript">
+		//xhr.readyState=1 초기화 단계
+		//xhr.readyState=2 request 단계
+		//xhr.readyState=3 응답 준비단계
+		//xhr.readyState=4 response 단계
+
+		var p;
+		var xhr;
+		var inputs;
+function callBack(e){
+	if(xhr.readyState==4){
+		if(xhr.status==200){
+			p.innerHTML=xhr.responseText;
+		}else{
+			alert("통신오류");
+		}
+	}
+};
+		
+function http(){
+	xhr=new XMLHttpRequest();
+	var method='GET';
+	var url='ex03.jsp?id='+inputs[0].value+'&pw='+inputs[1].value;
+	var async=true;
+	xhr.onreadystatechange=callBack;
+	xhr.open(method, url, async);
+	xhr.send();
+}
+
+window.onload=function(){
+	var link=document.querySelector("#header>div>p>button");
+	inputs=document.querySelectorAll("#header input");
+	p=document.querySelector("#header>div");
+	link.onclick=function(){
+	http();
+	return false;
+	};
+	
+};
+
+</script>
+</head>
+<body>
+	<div id="header">
+		<div>
+		<p>id:<input type="text"> </p>
+		<p>pw:<input type="text"> </p>
+		<p><button>로그인</button> </p>
+		</div>
+	</div>
+	<div id="menu">
+		<a href="#">MENU1</a>
+		<a href="#">MENU2</a>
+		<a href="#">MENU3</a>
+		<a href="#">MENU4</a>
+	</div>
+	<div id="content">
+		<img alt="" src="imgs/big01.jpg">
+	</div>
+	<div id="footer">(주)한빛이엔아이 ｜ 사업자등록번호 : 220-85-43667 ｜ 통신판매신고 : 마포 제 0358호
+한빛ENI : 02-707-1480 / (121-854) 서울시 마포구 신수동 63-14 구프라자 3층 / 대표이사 : 염기호
+개인정보보호관리책임자 : 허윤
+Copyright (c) 2015 한빛교육센터 All rights reserved.</div>
+</body>
+</html>
