@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var ul,xhr;
+	window.onload=function(){
+		ul=document.querySelector('ul');
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var json=JSON.parse(xhr.responseText);
+				var arr=json.imgs;
+				for(var i=0; i<arr.length; i++){
+					var obj=arr[i];
+					ul.innerHTML+='<li>'+obj.dir+"/"+obj.src+'</li>';
+				}
+			}
+		};
+		xhr.open('get','ex09.json',true);
+		xhr.send();
+	};
+
+</script>
+</head>
+<body>
+	<ul></ul>
+</body>
+</html>
