@@ -16,7 +16,7 @@
 	var xhr;
 	var listTable;
 	var divs;
-	
+	var rows;
 	function http(url,callback){
 		xhr=new XMLHttpRequest();
 		if(callback)xhr.onreadystatechange=callback;
@@ -33,6 +33,11 @@
 			listTable.innerHTML="<tr><th>사번</th><th>이름</th></tr>";
 			for(var i=0; i<arr.length; i++){
 				listTable.innerHTML+="<tr><td>"+arr[i].sabun+"</td><td>"+arr[i].name+"</td></tr>";
+			}
+			
+			rows=document.querySelectorAll("#page1>table>tbody:nth-child(1)~tbody");
+			for(var i=0; i<rows.length; i++){
+				rows[i].addEventListener("click",selectOne);
 			}
 		}
 	}
@@ -79,8 +84,11 @@
 		
 		listTable=document.querySelector("#page1>table");
 		http("list.json",getList);
-		
 	};
+	function selectOne() {
+		var sabun=this.querySelector("td").innerText;
+		http("detail.xml?sabun"+sabun);
+	}
 
 
 </script>

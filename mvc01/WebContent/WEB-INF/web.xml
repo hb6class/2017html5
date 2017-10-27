@@ -19,6 +19,10 @@
   	<servlet-class>com.hb.day01.ListJson</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>one</servlet-name>
+  	<servlet-class>com.hb.day01.OneJson</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>add</servlet-name>
   	<servlet-class>com.hb.day01.Add</servlet-class>
   </servlet>
@@ -37,6 +41,10 @@
   <servlet-mapping>
   	<servlet-name>add</servlet-name>
   	<url-pattern>/add.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>one</servlet-name>
+  	<url-pattern>/detail.xml</url-pattern>
   </servlet-mapping>
 </web-app>
 
