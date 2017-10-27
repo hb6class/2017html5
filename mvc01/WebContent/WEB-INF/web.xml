@@ -18,6 +18,10 @@
   	<servlet-name>list</servlet-name>
   	<servlet-class>com.hb.day01.ListJson</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>add</servlet-name>
+  	<servlet-class>com.hb.day01.Add</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ex03</servlet-name>
   	<url-pattern>/ex03</url-pattern>
@@ -29,6 +33,10 @@
   <servlet-mapping>
   	<servlet-name>list</servlet-name>
   	<url-pattern>/list.json</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>add</servlet-name>
+  	<url-pattern>/add.do</url-pattern>
   </servlet-mapping>
 </web-app>
 

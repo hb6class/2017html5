@@ -4,23 +4,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	div>table{
+	#page1>table{
 		width: 80%;
 		border: solid gray 1px;
 	}
-	div>table th,div>table td{
+	#page1>table th,div>table td{
 		border-bottom: solid gray 1px;
 	}
 </style>
 <script type="text/javascript">
 	var xhr;
 	var listTable;
+	var divs;
 	
-	function http(){
+	function http(url,callback){
 		xhr=new XMLHttpRequest();
-		xhr.onreadystatechange=getList;
-		xhr.open("get", "list.json", true);
+		if(callback)xhr.onreadystatechange=callback;
+		xhr.open("get", url, true);
 		xhr.send();
+		console.log(url);
 	}
 	
 	function getList() {
@@ -35,13 +37,48 @@
 		}
 	}
 	
+	function pageAllHide() {
+		for(var i=0; i<divs.length; i++){
+			divs[i].style.display="none";
+		}		
+	}
+	
+	function pageShow(tag){
+		var page1=document.querySelector(tag);
+		page1.style.display="block";
+	}
+	
 	window.onload=function(){
-		var divs=document.querySelectorAll("div");
+		divs=document.querySelectorAll(".page");
+		pageAllHide();
 		
-		var page1=document.querySelector("#page1");
+		pageShow("#page1");
+		
+		var btn1=document.querySelector("#page1 button");
+		var btn2=document.querySelectorAll("#page2 button")[0];
+		var btn3=document.querySelectorAll("#page2 button")[1];
+		var addform=document.querySelector("#page2 form");
+		btn1.onclick=function(){
+			pageAllHide();
+			pageShow("#page2");
+		};
+		
+		addform.onsubmit=function(){
+			var sabun=document.querySelectorAll("#page2 input")[0].value;
+			var name=document.querySelectorAll("#page2 input")[1].value;
+			var pay=document.querySelectorAll("#page2 input")[2].value;
+			var url="add.do?sabun="+sabun+"&name="+name+"&pay="+pay;
+			http(url);
+		};
+		
+		btn3.onclick=function(){
+			pageAllHide();
+			pageShow("#page1");
+			//window.location.reload();
+		};
 		
 		listTable=document.querySelector("#page1>table");
-		http();
+		http("list.json",getList);
 		
 	};
 
@@ -49,12 +86,23 @@
 </script>
 </head>
 <body>
-	<div id="page1">
-		<h1>리스트 페이지</h1>
+	<div id="header">
+		<h1>비트교육센터</h1>
+	</div>
+	<div class="page" id="page1">
+		<h2>리스트 페이지</h1>
 		<table></table>
 		<button>입력</button>	
 	</div>
-	<div id="page2"></div>
+	<div class="page" id="page2">
+		<h2>입력페이지</h2>
+		<form on>
+			<p>sabun<input type="text" name="sabun"/></p>
+			<p>name<input type="text" name="name"/></p>
+			<p>pay<input type="range" min="1000" max="9000" name="pay"/></p>
+			<p><button type="submit">입력</button><button type="button">뒤로</button></p>			
+		</form>
+	</div>
 </body>
 </html>
 
