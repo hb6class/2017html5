@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div>table{
+		width: 80%;
+		border: solid gray 1px;
+	}
+	div>table th,div>table td{
+		border-bottom: solid gray 1px;
+	}
+</style>
+<script type="text/javascript">
+	var xhr;
+	var listTable;
+	
+	function http(){
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=getList;
+		xhr.open("get", "list.json", true);
+		xhr.send();
+	}
+	
+	function getList() {
+		if(xhr.readyState==4 && xhr.status==200){
+			var msg=xhr.responseText;
+			var json=JSON.parse(msg);
+			var arr=json.guest01;
+			listTable.innerHTML="<tr><th>사번</th><th>이름</th></tr>";
+			for(var i=0; i<arr.length; i++){
+				listTable.innerHTML+="<tr><td>"+arr[i].sabun+"</td><td>"+arr[i].name+"</td></tr>";
+			}
+		}
+	}
+	
+	window.onload=function(){
+		var divs=document.querySelectorAll("div");
+		
+		var page1=document.querySelector("#page1");
+		
+		listTable=document.querySelector("#page1>table");
+		http();
+		
+	};
+
+
+</script>
+</head>
+<body>
+	<div id="page1">
+		<h1>리스트 페이지</h1>
+		<table></table>
+		<button>입력</button>	
+	</div>
+	<div id="page2"></div>
+</body>
+</html>
+
+
+
+
+
+
