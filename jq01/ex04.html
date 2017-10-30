@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .cl01{
+            color: red;
+        }
+        .cl02{
+            background-color: yellow;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    var btn;
+    
+    function func(){
+        $('li').addClass('cl01');
+    }
+    function func2(){
+        $('li').removeClass('cl01');
+    }
+    function func3(){
+        if(!($('li').hasClass('cl01')))$('li').addClass('cl01');
+        else $('li').removeClass('cl01');
+    }
+        
+    window.onload=function(){
+        btn=document.querySelectorAll('button');
+        btn[0].onclick=func;
+        btn[1].onclick=func2;
+        btn[2].onclick=func3;
+    };
+    
+    </script>
+</head>
+<body>
+    <h1 class="cl01 cl02">제목</h1>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+    <button>적용</button>
+    <button>제외</button>
+    <button>토글</button>
+</body>
+</html>

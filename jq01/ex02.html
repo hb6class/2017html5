@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul>li{
+            border-bottom: 1px solid red;
+            list-style: none;
+            color: blue;
+            float: left;
+        }
+    
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        var msg;
+    window.onload=function(){
+        //$('li').css('color','red');
+        //msg=$('li').eq(1).css('color');
+        //msg=$('li>a').first().attr('href');
+        //alert(msg);
+        $('li>a').first().attr('href','http://naver.com');
+    };
+    </script>
+</head>
+<body>
+    <h1>제목</h1>
+    <p>내용</p>
+    <ul>
+        <li><a href="ex01.html">menu1</a></li>
+        <li><a href="ex02.html">menu2</a></li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

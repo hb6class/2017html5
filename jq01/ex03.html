@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    var num=0;
+    var w=50;
+    var h=50;
+    function loop(){
+        num++;
+    //if(num>5)num=1;
+    //$('img').attr('src','imgs/big0'+num+'.jpg');
+        w+=10;
+        h+=10;
+        $('img').css('width',w+'px');
+        $('img').css('height',h+'px');
+        window.setTimeout(loop,1000);
+    }    
+        
+    window.onload=function(){
+        loop();
+    };
+    
+    </script>
+</head>
+<body>
+    <img src="imgs/big01.jpg"/>
+</body>
+</html>

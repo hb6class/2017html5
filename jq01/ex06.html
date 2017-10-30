@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        
+    var obj=[
+        '<a href="ex01.html">인사말</a>',
+        '<a href="ex02.html">게시판</a>',
+        '<a href="ex03.html">방명록</a>',
+        '<a href="ex04.html">로그인</a>'
+    ];
+    var btn;
+    window.onload=function(){
+        $('li').html(function(idx){
+            return obj[idx];
+        });
+        /*
+        btn=document.querySelector('button');
+        btn.onclick=function(){
+            var msg=$('ul').html();
+            msg+='<li>'+$('input').val()+'</li>';
+            $('ul').html(msg);
+        };
+        */
+    };
+    </script>
+</head>
+<body>
+   <div>
+    <h1>제목</h1>
+    <p><input type="text"/><button>추가</button></p>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    
+   </div>
+</body>
+</html>
