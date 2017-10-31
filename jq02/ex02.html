@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    var ul;
+    window.onload=function(){
+        var addLi=$('<li></li>').text('add');
+//        addLi.appendTo('ul');
+//        addLi.prependTo('ul');
+//        $('ul').prepend(addLi);
+//        $('<h2>ADD</h2>').insertAfter('ul');
+//        $('<h2>ADD</h2>').insertBefore('ul');
+//        $('ul').after('<h2>ADD2</h2>');
+//        $('ul').before('<h2>ADD2</h2>');
+        var arr=[
+            'https://naver.com',
+            'https://daum.net',
+            'https://google.com',
+            'http://hanbitedu.co.kr'
+        ];
+        $('li').append(function(idx){
+            return '<a href="'+arr[idx]+'">link</a>';
+        });
+        
+        //ul=$('ul');  
+        //var addLi=$('<li></li>');
+        //addLi.text('menu5');
+        //addLi.appendTo(ul);
+        //ul.append(addLi);
+        //$('li:first').appendTo(ul);
+       //ul.append(addLi).append(addLi);
+        //ul.append(addLi).append('<li>menu6</li>').append('<li>menu7</li>');
+        
+    };
+    </script>
+</head>
+<body>
+    <div>
+        <h1>목록</h1>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+        
+    </div>
+</body>
+</html>

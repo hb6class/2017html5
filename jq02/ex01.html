@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    
+    window.onload=function(){
+        var msg=$('<p>add내용</p>');
+        $(msg).appendTo('div');
+        
+        $('<img/>').attr('src','imgs/big02.jpg').appendTo('div');
+        
+        //$('div').html($('div').html()+'<p>내용2</p>');
+        
+        
+        //$('h1').remove();
+        //$('h1').empty();
+        //$('h1').text('hello');
+        /*
+        var h1=$('<h1></h1>');
+        h1.text('제목');
+        $('div').html(h1);
+        */
+    };
+    
+    </script>
+</head>
+<body>
+    <div>
+        <h1>제목</h1>
+        <p>내용</p>
+    </div>
+</body>
+</html>

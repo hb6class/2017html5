@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    
+window.onload=function(){
+    var li=$('<li>add</li>');
+    
+    $('ul').append(li);
+    $('ul').append(li.clone());
+    li.text('add2');
+    $('ul').append(li.clone());
+    $('ul').append(li.clone());
+    
+};
+        
+    </script>
+</head>
+<body>
+    <h1>목록</h1>
+    <ul>
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+        <li>menu04</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    
+window.onload=function(){
+    var arr=[
+        {'sabun':1111, 'name':'guest1'},
+        {'sabun':2222, 'name':'guest2'},
+        {'sabun':3333, 'name':'guest3'},
+        {'sabun':4444, 'name':'guest4'},
+        {'sabun':5555, 'name':'guest5'}
+    ];
+    var div = $('div');
+    for(var i=0; i<arr.length; i++){
+        div.append('<div></div>');
+    }
+    $('div>div').append(function(idx){
+       var msg='<h2>'+arr[idx].sabun+'</h2>';
+       msg+='<p>'+arr[idx].name+'</p>';
+       return msg; 
+    });
+    
+};
+    
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
