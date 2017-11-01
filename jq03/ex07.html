@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #bg{
+           width: 500px; 
+           height: 500px;
+            position: relative;
+            margin: 0px auto;
+            border: 1px solid red;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background-color: hotpink;
+            position: absolute;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+//        var x=0;
+        $(function(){
+            var func=function(){
+                $('#box').text($('#box').queue().length);
+            };
+            window.setInterval(func,500);
+            $('button').eq(0).click(function(){
+                //x+=100;
+                $('#box').animate({'left':450+'px'},3000);
+                $('#box').delay(1000);
+                $('#box').animate({'top':'450px'},3000);
+                $('#box').delay(1000);
+                $('#box').animate({'left':'0px'});
+                $('#box').delay(1000);
+                $('#box').animate({'top':'0px'});
+            });
+            $('button').eq(1).click(function(){
+                $('#box').finish();
+                //$('#box').clearQueue().stop(); 
+//                var leng=$('#box').queue().length;
+//                for(var i=0; i<leng; i++)$('#box').stop();
+            });
+            /*
+           $('#box').animate({
+               'left':'300px',
+               'opacity':0.2
+           },5000).animate({
+               'top':'300px',
+               'opacity':1
+           },5000).animate({
+               'left':'0px',
+               'opacity':0.2
+           },5000); //box ani end
+            */
+        });//ready end
+    </script>
+</head>
+<body>
+   <button>start</button>
+   <button>stop</button>
+   <div id="bg">
+    <div id="box"></div>
+   </div>
+</body>
+</html>

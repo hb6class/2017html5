@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body>div{
+            width: 500px;
+            margin: 0px auto;
+        }
+        #menu,#footer{
+            background-color: gray;
+        }
+        #menu>ul{
+            clear: both;
+            padding: 0px;
+            width: 400px;
+            margin: 0px auto;
+        }
+        #menu>ul>li{
+            float: left;
+            width: 100px;
+            list-style: none;
+        }
+        #menu>:nth-child(1)~ul{
+            display: none;
+        }
+        #content{
+            clear: both;
+            height: 300px;
+        }
+        #loop{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        #loop>ul{
+            padding: 0px;
+            width: 500px;
+            height: 100px;
+            position: absolute;
+        }
+        #loop>ul>li{
+            list-style: none;
+            float: left;
+        }
+        #loop>ul>li>img{
+            width: 100px;
+            height: 100px;
+        }
+        #footer{clear: both;}
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        var x=0;
+        $(function(){
+            
+        $('#content>a').click(function(e){
+            x-=100;
+            if(x<-400)x=0;
+            
+            e.preventDefault();
+            $('#loop>ul').animate({'left':x+'px'},1000);
+
+        });
+        var start=function(){
+            $('#content>a').click();
+        };    
+        window.setInterval(start,1000);    
+            
+            $('#menu>ul').mouseenter(function(){
+                $('#menu>ul:first~ul').clearQueue().stop().slideDown();
+            }).mouseleave(function(){
+                $('#menu>ul:first~ul').clearQueue().stop().slideUp();
+            });
+            
+            
+        });
+    
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h1>한빛교육센터</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+            <li>menu04</li>
+        </ul>
+        <ul>
+            <li>menu01-1</li>
+            <li>menu02-1</li>
+            <li>menu03-1</li>
+            <li>menu04-1</li>
+        </ul>
+        <ul>
+            <li>menu01-2</li>
+            <li>menu02-2</li>
+            <li>menu03-2</li>
+            <li>menu04-2</li>
+        </ul>
+    </div>
+    <div id="content">
+           <a href="#">next</a>
+       <div id="loop">
+           <ul>
+               <li><img src="imgs/big01.jpg" alt="img"/></li>
+               <li><img src="imgs/big02.jpg" alt="img"/></li>
+               <li><img src="imgs/big03.jpg" alt="img"/></li>
+               <li><img src="imgs/big04.jpg" alt="img"/></li>
+               <li><img src="imgs/big05.jpg" alt="img"/></li>
+           </ul>
+       </div> 
+        
+    </div>
+    <div id="footer">
+        비트교육센터 서울시 서초구 서초동 1327-15 비트아카데미빌딩｜ 사업자등록번호 : 214-85-24928
+(주)비트교육센터 서초지점 대표이사 : 조현정 / 문의 : 02-3486-9600 / 팩스 : 02-6007-1245
+통신판매업 신고번호 : 제 서초-00098호 / 개인정보보호관리책임자 : 권도혁
+Copyright (c) 비트캠프 All rights reserved.
+    </div>
+</body>
+</html>

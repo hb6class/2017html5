@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    var target;
+    var arr=[
+        'https:naver.com',
+        'https:daum.net',
+        'https:google.com',
+        'https:hanbit.com'
+    ];
+    $(function(){
+        $('button').click(function(){
+            alert('btn');
+        });
+        $('li').click(function(e){
+        target= this;
+        $(target).parent().children().each(function(idx,ele){
+               if(ele==target)$('p').html('<a href="'+arr[idx]+'">'+$(this).text()+'</a>');
+           });
+        });// li click end;
+        
+//        $('p>a').bind(function(){
+//        $('p>a').live('click',function(){// jQuery 1.3+
+//        $(document).delegate('p>a','click',function(){
+            //jQuery 1.4.3+
+        $(document).on('click','p>a',function(e){//1.7~~
+            e.preventDefault();// 기본기능 제거
+            e.stopPropagation();// 이벤트 전달 제거
+            alert("x:"+e.pageX+",y:"+e.pageY);
+            //return false;
+        });
+    });//ready end;
+    
+    </script>
+</head>
+<body>
+   <div>
+    <h1>제목</h1>
+    <p>내용</p>
+    <button>버튼</button>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+   </div>
+   <div></div>
+       
+</body>
+</html>

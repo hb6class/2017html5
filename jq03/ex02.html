@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+$(function(){
+   $('form').submit(function(e){
+       var msg="";
+       e.preventDefault();
+       var id=$('form>div>input:first').val();
+       msg+='id:'+id+'\n';
+       
+       $('form>div:eq(1)>input').each(function(){
+        msg+=$(this).val()+":"+$(this).is(':checked')+'\n';
+       });
+       
+       var ra=$('form>div:eq(2)>input:checked').val();
+       msg+='radio:'+ra+'\n';
+       
+       var sel=$('select option:selected').val();
+       msg+='select:'+sel;
+       alert(msg);
+   }); 
+});
+    </script>
+</head>
+<body>
+    <h1>제목</h1>
+    <form>
+        <div>
+            <label for="id">id</label>
+            <input type="text" id="id" />
+        </div>
+        <div>
+            <input type="checkbox" name="ch1" value="ch1"/>ch1
+            <input type="checkbox" name="ch2" value="ch2"/>ch2
+            <input type="checkbox" name="ch3" value="ch3"/>ch3
+        </div>
+        <div>
+            <input type="radio" name="ra" value="ra1"/>ra1
+            <input type="radio" name="ra" value="ra2"/>ra2
+            <input type="radio" name="ra" value="ra3"/>ra3
+        </div>
+        <div>
+            <select>
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+            </select>
+        </div>
+        <div>
+            <button>submit</button>
+        </div>
+    </form>
+</body>
+</html>

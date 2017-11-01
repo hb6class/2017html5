@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+    $(function(){
+        var func=function(){
+            alert('click');
+        };
+        $('button').eq(0).click(func);
+        $('button').eq(0).click(function(){
+            alert('click2');
+        });
+        
+//        $('input').on('click focusin',function(){
+//            $('p').html($('p').html()+'<br/>event');
+//        });
+        $('button').eq(1).on('click',function(){
+            $('button').eq(0).off('click',function(){
+            alert('click2');
+        });
+        });
+        
+    });
+    
+    </script>
+</head>
+<body>
+   <input type="text">
+    <button>btn</button>
+    <button>off</button>
+    <p></p>
+</body>
+</html>

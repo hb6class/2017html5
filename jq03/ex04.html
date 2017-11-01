@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                alert($('input').eq(0).prop('checked'));
+                alert($('input').eq(1).prop('checked'));
+                alert($('input').eq(2).prop('checked'));
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox" value="ch1"/>ch1
+    <input type="checkbox" value="ch1" checked/>ch2
+    <input type="checkbox" value="ch1"/>ch3
+    <button>btn</button>
+</body>
+</html>
