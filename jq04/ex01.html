@@ -141,10 +141,10 @@ $(document).ready(function(){
     });
     var nextNum=0;
     var next=function(){
-        $('#slider>a').eq(1).click();
-        if(nextNum<3)nextNum++;
-        else nextNum=0;
         bigch(nextNum);
+        if(nextNum<3)$('#slider>a').eq(1).click();
+        if(nextNum<4)nextNum++;
+        else nextNum=0;
         window.setTimeout(next,1000);
     };
     
