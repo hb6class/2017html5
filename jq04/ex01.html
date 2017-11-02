@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #big img{
+            width: 200px;
+            height: 200px;
+        }
+        #thumb img{
+            width: 100px;
+            height: 100px;
+        }
+        .container{
+            width: 80%;
+            margin: 0px auto;
+        }
+        .container>#header{}
+        .container>#header>span{
+            float: right;
+        }
+        .container>#menu{
+            clear: both;
+            background-color: gray;
+        }
+        .container>#menu>ul{
+            
+        }
+        .container>#menu>ul>li{
+            float: left;
+            width: 100px;
+            list-style: none;
+        }
+        .container>#menu>ul>li>ul{
+            display: none;
+        }
+        .container>#menu>ul>li>ul>li{
+            list-style: none;
+        }
+        .container>#menu>ul>li>ul>li>a{
+            text-decoration: none;
+        }
+        .container>#content{
+            clear: both;
+        }
+        .container>#content>#slider{
+        }
+        .container>#content>#slider>div{
+            clear: both;
+        }
+        .container>#content>#slider>div>ul{
+            position: relative;
+        }
+        .container>#content>#slider>div>ul>li{
+            float: left;
+            list-style: none;
+        }
+        .container>#content>#slider>div>ul>li>img{}
+        .container>#footer{
+            clear: both;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+$(document).ready(function(){
+    $('#menu>ul>li').hover(function(){
+        $(this).find('ul').slideToggle(1000);
+    });
+
+
+});
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+           <h1>한빛교육센터</h1>
+           <span>
+               <a href="#">login</a>/
+               <a href="#">join</a>
+           </span> 
+        </div>
+        <div id="menu">
+            <ul>
+                <li>menu1
+                    <ul>
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                    </ul>
+                </li>
+                <li>menu2
+                    <ul>
+                        <li><a href="#">menu2-1</a></li>
+                        <li><a href="#">menu2-2</a></li>
+                        <li><a href="#">menu2-3</a></li>
+                        <li><a href="#">menu2-4</a></li>
+                    </ul>
+                </li>
+                <li>menu3
+                    <ul>
+                        <li><a href="#">menu3-1</a></li>
+                        <li><a href="#">menu3-2</a></li>
+                        <li><a href="#">menu3-3</a></li>
+                        <li><a href="#">menu3-4</a></li>
+                    </ul>
+                </li>
+                <li>menu4
+                    <ul>
+                        <li><a href="#">menu4-1</a></li>
+                        <li><a href="#">menu4-2</a></li>
+                        <li><a href="#">menu4-3</a></li>
+                        <li><a href="#">menu4-4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="slider">
+                <div id="big">
+                    <ul>
+                        <li><img src="imgs/big01.jpg"/></li>
+                        <li><img src="imgs/big02.jpg"/></li>
+                        <li><img src="imgs/big03.jpg"/></li>
+                        <li><img src="imgs/big04.jpg"/></li>
+                        <li><img src="imgs/big05.jpg"/></li>
+                    </ul>
+                </div>
+                <div id="thumb">
+                    <ul>
+                        <li><img src="imgs/img01.jpg"/></li>
+                        <li><img src="imgs/img02.jpg"/></li>
+                        <li><img src="imgs/img03.jpg"/></li>
+                        <li><img src="imgs/img04.jpg"/></li>
+                        <li><img src="imgs/img05.jpg"/></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div id="footer">
+            
+            <div>
+                비트교육센터 <address>서울시 서초구 서초동 1327-15 비트아카데미빌딩</address>｜ 사업자등록번호 : 214-85-24928<br/>
+(주)비트컴퓨터 서초지점 대표이사 : 조현정 / 문의 : 02-3486-9600 / 팩스 : 02-6007-1245<br/>
+통신판매업 신고번호 : 제 서초-00098호 / 개인정보보호관리책임자 : 권도혁<br/>
+Copyright (c) 비트캠프 All rights reserved.
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
