@@ -9,8 +9,8 @@
             padding: 0px;
         }
         #big img{
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
         }
         #thumb img{
             width: 100px;
@@ -27,20 +27,27 @@
         .container>#menu{
             clear: both;
             background-color: gray;
+            overflow: hidden;
         }
         .container>#menu>ul{
-            
+            width: 400px;
+            margin: 0px auto;
         }
         .container>#menu>ul>li{
             float: left;
             width: 100px;
             list-style: none;
+            text-align: center;
         }
         .container>#menu>ul>li>ul{
             display: none;
         }
         .container>#menu>ul>li>ul>li{
             list-style: none;
+            text-align: center;
+        }
+        .container>#menu>ul>li>ul>li:hover{
+            background-color: red;
         }
         .container>#menu>ul>li>ul>li>a{
             text-decoration: none;
@@ -52,6 +59,31 @@
         }
         .container>#content>#slider>div{
             clear: both;
+        }
+        .container>#content>#slider>#big{
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            
+        }
+        .container>#content>#slider>#big>ul{
+            position: absolute;
+        }
+        .container>#content>#slider>#big>ul>li{
+            
+        }
+        .container>#content>#slider>#big>ul>li>img{
+            
+        }
+        .container>#content>#slider>#thumb{
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 100px;
+        }
+        .container>#content>#slider>#thumb>ul{
+            position: absolute;
         }
         .container>#content>#slider>div>ul{
             position: relative;
@@ -67,9 +99,60 @@
     </style>
     <script src="js/jquery-1.12.4.js"></script>
     <script>
+    var bigW;
+    var thumbShowCnt=3;
+    var thumbW;
+    var thumbCnt;
+    var cnt=0;
 $(document).ready(function(){
+    bigW=$('.container>#content>#slider>#big>ul>li').width();
+    thumbW=$('.container>#content>#slider>#thumb>ul>li').width();
+    thumbCnt=$('.container>#content>#slider>#thumb>ul>li').length;
+    /*thumb func*/
+    var thumbStart=function(){
+        if(cnt>thumbCnt-thumbShowCnt)cnt=0;
+        var w=thumbW*cnt;
+        
+        $('.container>#content>#slider>#thumb>ul').animate({
+            //left: -300px;
+            'left':'-'+w+'px'
+        });
+        cnt++;
+    };
+    
+    /*big func*/
+    var bigch=function(su){
+        var num=bigW*su;
+        $('.container>#content>#slider>#big>ul').animate({
+            'left':'-'+num+'px'
+        });
+    };
+    
+    /*thumb click*/
+    $('.container>#content>#slider>#thumb>ul>li').click(function(){
+        var idx=$(this).find('img').attr('alt');
+        bigch(idx);
+    });
+    
+    /*prev&next click*/
+    $('#slider>a').eq(1).click(function(e){
+        e.preventDefault();
+        thumbStart();
+    });
+    var nextNum=0;
+    var next=function(){
+        $('#slider>a').eq(1).click();
+        if(nextNum<3)nextNum++;
+        else nextNum=0;
+        bigch(nextNum);
+        window.setTimeout(next,1000);
+    };
+    
+    
+    window.setTimeout(next,1000);
+    /*menu ani*/
     $('#menu>ul>li').hover(function(){
-        $(this).find('ul').slideToggle(1000);
+        $(this).find('ul').clearQueue().stop().slideToggle(1000);
     });
 
 
@@ -134,14 +217,15 @@ $(document).ready(function(){
                 </div>
                 <div id="thumb">
                     <ul>
-                        <li><img src="imgs/img01.jpg"/></li>
-                        <li><img src="imgs/img02.jpg"/></li>
-                        <li><img src="imgs/img03.jpg"/></li>
-                        <li><img src="imgs/img04.jpg"/></li>
-                        <li><img src="imgs/img05.jpg"/></li>
+                        <li><img alt="0" src="imgs/img01.jpg"/></li>
+                        <li><img alt="1" src="imgs/img02.jpg"/></li>
+                        <li><img alt="2" src="imgs/img03.jpg"/></li>
+                        <li><img alt="3" src="imgs/img04.jpg"/></li>
+                        <li><img alt="4" src="imgs/img05.jpg"/></li>
                     </ul>
                 </div>
-                
+                <a href="#">perv</a>
+                <a href="#">next</a>
             </div>
         </div>
         <div id="footer">
