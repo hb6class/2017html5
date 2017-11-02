@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bxslider2 img{
+            width: 300px;
+            height: 300px;
+        }
+        .bxslider img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        var bx1, bx2;
+        function func(){
+            var idx=bx1.getCurrentSlide();
+            if(idx+1<bx1.getSlideCount())bx2.goToSlide(idx+1);
+            else bx2.goToSlide(0);
+        }
+        $(function(){
+            bx2=$('.bxslider2').bxSlider({
+                'startSlide':1,
+                'auto':false,
+                'slideWidth':300,
+                'moveSlides':1,
+                'minSlides':1,
+                'maxSlides':1,
+                'controls':false,
+                'pager':false
+            });
+            
+            bx1=$('.bxslider').bxSlider({
+                'auto':true,
+                'slideWidth':100,
+                'moveSlides':1,
+                'minSlides':1,
+                'maxSlides':3,
+                'onSlideNext':func
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+       <div class="bxslider2">
+            <div>
+                <img alt="01" title="big01" src="imgs/big01.jpg"/>
+            </div>
+            <div>
+                <img alt="02" title="big02" src="imgs/big02.jpg"/>
+            </div>
+            <div>
+                <img alt="03" title="big03" src="imgs/big03.jpg"/>
+            </div>
+            <div>
+                <img alt="04" title="big04" src="imgs/big04.jpg"/>
+            </div>
+            <div>
+                <img alt="05" title="big05" src="imgs/big05.jpg"/>
+            </div>
+        </div>
+        <div class="bxslider">
+            <div>
+                <img alt="01" title="big01" src="imgs/img01.jpg"/>
+            </div>
+            <div>
+                <img alt="02" title="big02" src="imgs/img02.jpg"/>
+            </div>
+            <div>
+                <img alt="03" title="big03" src="imgs/img03.jpg"/>
+            </div>
+            <div>
+                <img alt="04" title="big04" src="imgs/img04.jpg"/>
+            </div>
+            <div>
+                <img alt="05" title="big05" src="imgs/img05.jpg"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

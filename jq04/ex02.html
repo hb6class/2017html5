@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bx-pager-item{
+            float: left;
+        }
+        .bx-has-controls-direction{
+            position: relative;
+        }
+        .bx-has-controls-direction{
+            position: absolute;
+            top: 120px;
+        }
+        .bx-caption{
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            color: white;
+            font-size: 20pt;
+        }
+        .bxslider img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        var bx;
+        $(document).ready(function(){
+            var bigSetup=function(){
+                $('<img />').prependTo('#content').css('width','300px').css('height','300px').attr('src','imgs/big02.jpg');
+            };
+            var bigCh=function(num){
+                $('#content>img').attr('src','imgs/big0'+(num+1)+'.jpg');
+            };
+            
+            var myclick=function(){
+                var num=bx.getCurrentSlide();
+                console.log(bx.getCurrentSlide());
+                bigCh(++num);
+//                $('.bx-viewport img').eq(1).click();
+            };
+            
+            bx=$('#content>.bxslider').bxSlider({
+                'mode':'horizontal',
+                'slideMargin':50,
+                /*'randomStart':true,*/
+                /*'infiniteLoop':false,*/
+                /*'hideControlOnEnd':true,*/
+                'captions':true,
+                'auto':true,
+                'speed':2000,
+                'slideWidth':100,
+                'moveSlides':1,
+                'minSlides':1,
+                'maxSlides':3,
+                'onSliderLoad':bigSetup
+                ,'onSlideAfter':myclick
+                /*,
+                'controls':false,
+                'pager':false*/
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div class="bxslider">
+            <div>
+                <img alt="01" title="big01" src="imgs/img01.jpg"/>
+            </div>
+            <div>
+                <img alt="02" title="big02" src="imgs/img02.jpg"/>
+            </div>
+            <div>
+                <img alt="03" title="big03" src="imgs/img03.jpg"/>
+            </div>
+            <div>
+                <img alt="04" title="big04" src="imgs/img04.jpg"/>
+            </div>
+            <div>
+                <img alt="05" title="big05" src="imgs/img05.jpg"/>
+            </div>
+            
+            
+        </div>
+        
+        
+    </div>
+</body>
+</html>
