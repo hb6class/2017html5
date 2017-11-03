@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body>div{
+		clear: both;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	
+	var callback,callback2;
+	$(document).ready(function() {
+		callback2=function(a,b,c){
+			//console.log('readyState:'+a.readyState);
+			//console.log('status code:'+a.status);
+			//console.log('status:'+b);
+			//console.log('error msg:'+c);
+			alert("ERR [code:"+a.status+"] :"+c);
+		};
+		callback=function(a,b,c){
+			//console.log('data:'+a);
+			//console.log('status:'+b);
+			//console.log('readyState:'+c.readyState);
+			//console.log('status:'+c.status);
+			$('#content').append(a);
+		};
+		//$('#content').load('./target/lec01.html');
+		$.ajax({
+			'type':'POST'	//'GET'&'POST'
+			,'url':'./target/lec02.html'
+			,'data':'name=root&sub=세종대왕'
+			,'async':true
+			,'error':callback2
+			,'success':callback
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="header">
+		<h1>비트교육센터</h1>
+	</div>	
+	<div id="menu">
+		<a href="#">menu1</a>
+		<a href="#">menu2</a>
+		<a href="#">menu3</a>
+		<a href="#">menu4</a>
+	</div>
+	<div id="content">
+	</div>
+	<div id="footer">
+		비트교육센터 서울시 서초구 서초동 1327-15 비트아카데미빌딩｜ 사업자등록번호 : 214-85-24928
+(주)비트컴퓨터 서초지점 대표이사 : 조현정 / 문의 : 02-3486-9600 / 팩스 : 02-6007-1245
+통신판매업 신고번호 : 제 서초-00098호 / 개인정보보호관리책임자 : 권도혁
+Copyright (c) 비트캠프 All rights reserved.
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func01(a) {
+		if(typeof(a.callback)=='function'){
+			a.callback(a.data);
+		}else{
+			alert('func01 run');
+		}
+	}
+	
+	function func02(a) {
+		if(a) alert('func02 a:'+a);
+		else alert('func02 run');
+	}
+	
+	function func03() {
+		alert('func03 run');
+	}
+	var obj={
+			/* 'data':'1234', */
+			'callback':func02
+	};
+	func01(obj);
+
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
