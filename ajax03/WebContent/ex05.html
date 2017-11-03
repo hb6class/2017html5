@@ -23,8 +23,12 @@ $(function() {
 		
 		var obj={
 //				'url':'/ajax03/target/user.xml'
-				'url':'/ajax03/target/list.xml'
+//				'url':'/ajax03/target/list.xml'
+				'url':'/ajax03/target/list.json'
 				,'success':function(data){
+					
+					
+					/* 
 					$('div').append('<ul></ul>');
 					$(data).find('list').each(function(idx,ele) {
 						var sabun=$(ele).find('sabun').text();
@@ -34,7 +38,7 @@ $(function() {
 								+'</span><span>'+name
 								+'</span>').appendTo('div>ul');
 					});
-					
+					 */
 					//$('ul').appendTo("div");
 					/* var arr=data.childNodes[0].childNodes;
 					for(var i=0; i<arr.length; i++){

@@ -14,6 +14,10 @@
   	<servlet-name>lec03</servlet-name>
   	<servlet-class>com.hb.day01.Ex02</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>lec04</servlet-name>
+  	<servlet-class>com.hb.day01.Ex03</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>lec02</servlet-name>
   	<url-pattern>/target/lec02.html</url-pattern>
@@ -21,6 +25,10 @@
   <servlet-mapping>
   	<servlet-name>lec03</servlet-name>
   	<url-pattern>/target/list.xml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>lec04</servlet-name>
+  	<url-pattern>/target/list.json</url-pattern>
   </servlet-mapping>
 </web-app>
 
