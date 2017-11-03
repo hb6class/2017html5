@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('form').submit(function() {
+			var url=$(this).attr('action');
+			var method=$(this).attr('method');
+			var sub=$(this).find('input').eq(0).val();
+			var name=$(this).find('input').eq(1).val();
+			
+			var arr=$(this).serializeArray();
+			
+			var params={'sub':sub,'name':name};
+			//var param=$(this).serialize();
+			
+			var obj={
+					'url':url
+					,'type':method
+					,'data':$.param(params)
+					,'success':function(data){
+						$('body>div').html(data);
+					}
+			};
+			$.ajax(obj);
+			
+			return false;
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>FORM PAGE</h1>
+	<div>
+		<form action="target/lec02.html" method="post">
+			<div>
+			sub:<input type="text" name="sub"/>
+			</div>
+			<div>
+			name:<input type="text" name="name"/>
+			</div>	
+			<div>
+				<button>전송</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

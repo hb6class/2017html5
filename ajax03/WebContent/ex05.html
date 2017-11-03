@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul>li{
+		list-style: none;
+		border-bottom: 1px solid gray;
+	}
+	ul>li>span{
+		display: inline-block;
+		width: 100px;
+		height: 50px;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+var xml;
+$(function() {
+	$('button').click(function() {
+		
+		var obj={
+//				'url':'/ajax03/target/user.xml'
+				'url':'/ajax03/target/list.xml'
+				,'success':function(data){
+					$('div').append('<ul></ul>');
+					$(data).find('list').each(function(idx,ele) {
+						var sabun=$(ele).find('sabun').text();
+						var name=$(ele).find('name').text();
+						console.log(idx, sabun, name);
+						$('<li></li>').html('<span>'+sabun
+								+'</span><span>'+name
+								+'</span>').appendTo('div>ul');
+					});
+					
+					//$('ul').appendTo("div");
+					/* var arr=data.childNodes[0].childNodes;
+					for(var i=0; i<arr.length; i++){
+						var sabun=arr[i].childNodes[0].childNodes[0].nodeValue;
+						var name=arr[i].childNodes[1].childNodes[0].nodeValue;
+						console.log(sabun,name);
+						//$("div>ul").append("<li>"+sabun+"</li>");
+						$('<li></li>').attr('name',name).text(sabun).appendTo('div>ul');
+					} */
+				}
+		};
+		
+		$.ajax(obj);
+		
+	});
+});
+
+</script>
+</head>
+<body>
+	<button>xml 파싱</button>
+	<div></div>
+</body>
+</html>

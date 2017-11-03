@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var xml;
+	$(function() {
+		$('button').click(function() {
+			var obj={
+					'url':'target/user.xml'
+					,'dataType':'xml'
+					,'success':function(data){
+						//var tmp=JSON.parse(data);
+						xml=data;
+						/* var arr=data.root;
+						if(arr[0].result){
+							$('div').html('<h1>'+arr[0].name+'</h1>');
+						} */
+						/* if($(data).find('result').text()=='true'){
+							$('div').html('<h1>'+$(data).find('name').text()+'</h1>');
+						}else{
+							$('div').html('<h1>로그인 실패</h1>');
+						} */
+					}
+			};
+			
+			$.ajax(obj);
+		});
+	});
+
+</script>
+</head>
+<body>
+	<button>파싱</button>
+	<div></div>
+</body>
+</html>
+
