@@ -10,8 +10,16 @@
   	<servlet-name>list</servlet-name>
   	<servlet-class>com.hb.guest.ListAll</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>add</servlet-name>
+  	<servlet-class>com.hb.guest.InsertOne</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>list</servlet-name>
   	<url-pattern>/bbs/list.xml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>add</servlet-name>
+  	<url-pattern>/bbs/insert.html</url-pattern>
   </servlet-mapping>
 </web-app>

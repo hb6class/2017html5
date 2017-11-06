@@ -6,9 +6,62 @@
 <link rel="stylesheet" type="text/css" href="/ajax04/css/960.css"/>
 <link rel="stylesheet" type="text/css" href="/ajax04/css/header.css"/>
 <link rel="stylesheet" type="text/css" href="/ajax04/css/menu.css"/>
+<style type="text/css">
+	form {
+		width: 80%;
+		margin: 0px auto;
+	}
+	form>div{
+	}
+	form>div>label{
+		display: inline-block;
+		width: 120px;
+		background-color: #dddddd;
+	}
+</style>
 <script type="text/javascript" src="/ajax04/js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="/ajax04/js/menu.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('button').last().click(function() {
+			window.history.back();
+		});
+		$('form').submit(function(e) {
+			$(this).find('span').remove();
+			e.preventDefault();
+			var url=$(this).attr('action');
+			var method=$(this).attr('method');
+			var param=$(this).serialize();
+			
+			if(!$(this).find('input').eq(0).val()){
+				$(this).find('input').eq(0).after('<span>sabun을 입력하세요</span>');
+				$(this).find('input').eq(0).focus();
+				return;
+			}
+			if(!$(this).find('input').eq(1).val()){
+				$(this).find('input').eq(1).after('<span>name을 입력하세요</span>').focus();
+				return;
+			}
+			if(!$(this).find('input').eq(2).val()){
+				$(this).find('input').eq(2).after('<span>pay을 입력하세요</span>').focus();
+				return;
+			}
+			
+			$.ajax({
+				'url':url
+				,'type':method
+				,'data':param
+				,'error':function(a,b,c){
+					alert(b+'['+a.status+']:'+c);
+				}
+				,'success':function(){
+					window.location.replace('list.html');
+				}
+			});
+		});
+	});
 
+</script>
 </head>
 <body>
 	<div class="container_12">
@@ -45,7 +98,27 @@
 			<div class="grid_12">
 				<!-- content start -->
 				<h1>입력 페이지</h1>
+				<form action="insert.html" method="post">
+				<div>
+					<label for="sabun">sabun</label>
+					<input type="text" id="sabun" name="sabun">
+				</div>
+				<div>
+					<label for="name">name</label>
+					<input type="text" id="name" name="name">
+				</div>
+				<div>
+					<label for="pay">pay</label>
+					<input type="text" id="pay" name="pay">
+				</div>
+				<div>
+					<button type="submit">전송</button>
+					<button type="reset">취소</button>
+					<button type="button">이전</button>
+				</div>
 				
+				
+				</form>
 				<!-- content end -->
 			</div>
 		<div class="clear"></div>
