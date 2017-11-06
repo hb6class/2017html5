@@ -18,11 +18,24 @@
 	table>tbody>tr>td {
 		border-bottom: solid 1px gray;
 	}
+	#content{
+		position: relative;
+	}
+	.popup{
+		position: absolute;
+		width: 70%;
+		height: 200px;
+		background-color: white;
+		top:100px;
+		left: 100px;
+		border: 3px gray solid;
+	}
 </style>
 <script type="text/javascript" src="/ajax04/js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="/ajax04/js/menu.js"></script>
 <script type="text/javascript">
 	$(function() {
+		
 		$.ajax('http://localhost:8080/ajax04/bbs/list.xml',{
 			'type':'get'
 			,'error':function(xhr,status,error){
@@ -44,6 +57,38 @@
 				});
 			}
 		});
+		
+		$(document).on('click','table>tbody>tr~tr',function() {
+			var idx=$(this).children().eq(0).text();
+			/* 
+			$('#content>div>h1').text('상세페이지').next().remove();
+			$.get('detail.html','idx='+idx,function(data){
+				var sabun=$('<div></div>').append('<span>사번</span>').append('<span>'+$(data).find('sabun').text()+'</span>');
+				var name=$('<div></div>').append('<span>이름</span>').append('<span>'+$(data).find('name').text()+'</span>');
+				var nalja=$('<div></div>').append('<span>날짜</span>').append('<span>'+$(data).find('nalja').text()+'</span>');
+				var pay=$('<div></div>').append('<span>금액</span>').append('<span>'+$(data).find('pay').text()+'</span>');
+				$('#content>div').append(sabun).append(name).append(nalja).append(pay);
+			}); 
+			*/
+			$('#content>div').eq(0).after('<div class="popup"></div>');
+			
+			$('.popup').append('<h1>상세페이지</h1>');
+			$.get('detail.html','idx='+idx,function(data){
+				var sabun=$('<div></div>').append('<span>사번</span>').append('<span>'+$(data).find('sabun').text()+'</span>');
+				var name=$('<div></div>').append('<span>이름</span>').append('<span>'+$(data).find('name').text()+'</span>');
+				var nalja=$('<div></div>').append('<span>날짜</span>').append('<span>'+$(data).find('nalja').text()+'</span>');
+				var pay=$('<div></div>').append('<span>금액</span>').append('<span>'+$(data).find('pay').text()+'</span>');
+				$('.popup').append(sabun).append(name).append(nalja).append(pay).append('<button>수정</button>');
+				$('.popup').on('click',function(e) {
+					e.stopPropagation();
+					$(this).remove();
+				});
+				$('.popup>button').on('click',function(e){
+					e.stopPropagation();
+				});
+			});
+		});
+
 	});
 </script>
 </head>
