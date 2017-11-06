@@ -15,6 +15,10 @@
   	<servlet-class>com.hb.guest.InsertOne</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>edit</servlet-name>
+  	<servlet-class>com.hb.guest.UpdateOne</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>detail</servlet-name>
   	<servlet-class>com.hb.guest.ListOne</servlet-class>
   </servlet>
@@ -29,5 +33,9 @@
   <servlet-mapping>
   	<servlet-name>detail</servlet-name>
   	<url-pattern>/bbs/detail.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>edit</servlet-name>
+  	<url-pattern>/bbs/update.html</url-pattern>
   </servlet-mapping>
 </web-app>

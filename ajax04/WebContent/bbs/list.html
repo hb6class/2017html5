@@ -72,23 +72,41 @@
 			*/
 			$('#content>div').eq(0).after('<div class="popup"></div>');
 			
-			$('.popup').append('<h1>상세페이지</h1>');
+			$('.popup').css('display','none').show(1000).html('<h1>상세페이지</h1>');
 			$.get('detail.html','idx='+idx,function(data){
-				var sabun=$('<div></div>').append('<span>사번</span>').append('<span>'+$(data).find('sabun').text()+'</span>');
-				var name=$('<div></div>').append('<span>이름</span>').append('<span>'+$(data).find('name').text()+'</span>');
+				var sabun=$('<div></div>').append('<span>사번</span>').append('<span class="bean">'+$(data).find('sabun').text()+'</span>');
+				var name=$('<div></div>').append('<span>이름</span>').append('<span class="bean">'+$(data).find('name').text()+'</span>');
 				var nalja=$('<div></div>').append('<span>날짜</span>').append('<span>'+$(data).find('nalja').text()+'</span>');
-				var pay=$('<div></div>').append('<span>금액</span>').append('<span>'+$(data).find('pay').text()+'</span>');
+				var pay=$('<div></div>').append('<span>금액</span>').append('<span class="bean">'+$(data).find('pay').text()+'</span>');
 				$('.popup').append(sabun).append(name).append(nalja).append(pay).append('<button>수정</button>');
 				$('.popup').on('click',function(e) {
 					e.stopPropagation();
-					$(this).remove();
+					$(this).hide(1000,function(){
+						$(this).remove();
+					});
 				});
 				$('.popup>button').on('click',function(e){
 					e.stopPropagation();
+					var sabun=$('.popup').find('.bean').eq(0).text();
+					var name=$('.popup').find('.bean').eq(1).text();
+					var pay=$('.popup').find('.bean').eq(2).text();
+					$('.popup').load('edit.html',function(){
+						$('.popup').find('input').eq(0).val(sabun);
+						$('.popup').find('input').eq(1).val(name);
+						$('.popup').find('input').eq(2).val(pay);
+					});
+					
 				});
 			});
 		});
-
+	
+		$(document).on('submit','.popup form',function(e){
+			e.preventDefault();
+			var param=$('.popup form').serialize();
+			$.post('update.html',param,function(){
+				window.location.reload();
+			});
+		});
 	});
 </script>
 </head>
