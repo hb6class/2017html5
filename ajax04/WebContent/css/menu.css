@@ -16,16 +16,18 @@
 		border-color: gray;
 		border-width: 1px;
 		box-sizing:border-box;
-		margin: 5px;
+		margin: 2px;
 	}
 	#menu ul>li>ul{
 		display: none;
 		position: absolute;
 		top: 45px;
 		padding: 0px;
+		z-index: 5;
 	}
 	#menu ul>li>ul>li{
 		background-color: red;
 		float: left;
 		left: 0px;
+		margin: 2px;
 	}

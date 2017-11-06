@@ -6,63 +6,15 @@
 <link rel="stylesheet" type="text/css" href="/ajax04/css/960.css"/>
 <link rel="stylesheet" type="text/css" href="/ajax04/css/header.css"/>
 <link rel="stylesheet" type="text/css" href="/ajax04/css/menu.css"/>
-<style type="text/css">
-	.bxslider,.bxslider>*{
-		z-index: 1;
-	}
-	.bx-wrapper{
-	}
-	.bx-controls{
-		top:0px;
-		position: relative;
-	}
-	.bx-controls-direction{
-	}
-	.bx-controls-direction>a{
-		position: absolute;
-		top: -150px;
-		width: 50px;
-		height: 50px;
-		text-indent: -999px;
-		z-index: 3;
-	}
-	.bx-controls-direction>a:nth-child(1){
-		background-image: url("imgs/prev.png");
-	}
-	.bx-controls-direction>a:nth-child(2){
-		left: 300px;
-		background-image: url("imgs/next.png");
-	}
-	.bx-pager{
-	 	position: absolute;
-		top: -50px;
-	}
-	.bx-pager-item{
-		display: inline-block;
-		margin: 10px;
-	}
-	
-</style>
 <script type="text/javascript" src="/ajax04/js/jquery-1.12.4.js"></script>
-<script type="text/javascript" src="/ajax04/js/jquery.bxslider.js"></script>
 <script type="text/javascript" src="/ajax04/js/menu.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.bxslider').bxSlider({
-			'mode':'fade'
-			,'auto':true
-			,'pause':2000
-		});
-		$('.bx-pager-item>a').css('text-decoration','none').text('★');
-	});
-	
-</script>
+
 </head>
 <body>
 	<div class="container_12">
 		<div id="header">
 			<div class="grid_6">
-				<img alt="logo" src="imgs/logo.jpg"/>
+				<img alt="logo" src="/ajax04/imgs/logo.jpg"/>
 			</div>
 			<div class="grid_6">
 				<span>
@@ -79,8 +31,8 @@
 					<li><a href="/ajax04/">HOME</a></li>
 					<li class="submn">게시판
 						<ul>
-							<li><a href="bbs/list.html">리스트</a></li>
-							<li><a href="bbs/add.html">글쓰기</a></li>
+							<li><a href="list.html">리스트</a></li>
+							<li><a href="add.html">글쓰기</a></li>
 						</ul>
 					</li>
 					<li><a href="#">방명록</a></li>
@@ -91,13 +43,10 @@
 		</div>
 		<div id="content">
 			<div class="grid_12">
-				<div class="bxslider">
-					<div><img alt="big01" src="imgs/big01.jpg"> </div>
-					<div><img alt="big02" src="imgs/big02.jpg"> </div>
-					<div><img alt="big03" src="imgs/big03.jpg"> </div>
-					<div><img alt="big04" src="imgs/big04.jpg"> </div>
-					<div><img alt="big05" src="imgs/big05.jpg"> </div>				
-				</div>
+				<!-- content start -->
+				<h1>리스트 페이지</h1>
+				
+				<!-- content end -->
 			</div>
 		<div class="clear"></div>
 		</div>
@@ -113,15 +62,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
