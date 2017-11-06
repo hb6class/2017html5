@@ -8,7 +8,31 @@
 <link rel="stylesheet" type="text/css" href="/ajax04/css/menu.css"/>
 <script type="text/javascript" src="/ajax04/js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="/ajax04/js/menu.js"></script>
-
+<script type="text/javascript">
+	$(function() {
+		$.ajax('http://localhost:8080/ajax04/bbs/list.xml',{
+			'type':'get'
+			,'error':function(xhr,status,error){
+				alert(error);
+			}
+			,'success':function(data){
+				$(data).find('bean').each(function(idx,ele) {
+					var sabun=$(ele).find('sabun').text();
+					var name=$(ele).find('name').text();
+					var nalja=$(ele).find('nalja').text();
+					var pay=$(ele).find('pay').text();
+					var tmp='<tr>';					
+					tmp+='<td>'+sabun+'</td>';
+					tmp+='<td>'+name+'</td>';
+					tmp+='<td>'+nalja+'</td>';
+					tmp+='<td>'+pay+'</td>';
+					tmp+='</tr>';
+					$('table').append(tmp);
+				});
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="container_12">
@@ -45,7 +69,14 @@
 			<div class="grid_12">
 				<!-- content start -->
 				<h1>리스트 페이지</h1>
-				
+				<table>
+					<tr>
+						<th>사번</th>
+						<th>이름</th>
+						<th>날짜</th>
+						<th>금액</th>
+					</tr>
+				</table>
 				<!-- content end -->
 			</div>
 		<div class="clear"></div>
