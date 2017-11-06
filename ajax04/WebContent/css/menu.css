@@ -1,0 +1,31 @@
+#menu{}
+	#menu>div>ul{
+		padding: 0px;
+		width: 330px;
+		margin: 0px auto;
+	}
+	#menu ul>li{
+		list-style: none;
+		float: left;
+		width: 100px;
+		height: 45px;
+		position: relative;
+		text-align: center;
+		line-height: 45px;
+		border-style: dotted;
+		border-color: gray;
+		border-width: 1px;
+		box-sizing:border-box;
+		margin: 5px;
+	}
+	#menu ul>li>ul{
+		display: none;
+		position: absolute;
+		top: 45px;
+		padding: 0px;
+	}
+	#menu ul>li>ul>li{
+		background-color: red;
+		float: left;
+		left: 0px;
+	}

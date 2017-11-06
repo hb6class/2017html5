@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/ajax04/css/960.css"/>
+<link rel="stylesheet" type="text/css" href="/ajax04/css/header.css"/>
+<link rel="stylesheet" type="text/css" href="/ajax04/css/menu.css"/>
+<style type="text/css">
+	
+	.bxslider,.bxslider>*{
+		z-index: -1;
+	}
+</style>
+<script type="text/javascript" src="/ajax04/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/ajax04/js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#menu ul>li').eq(1).click(function() {
+			$(this).find('ul').slideToggle();
+		});
+		
+		$('.bxslider').bxSlider();
+	});
+	
+</script>
+</head>
+<body>
+	<div class="container_12">
+		<div id="header">
+			<div class="grid_6">
+				<img alt="logo" src="imgs/logo.jpg"/>
+			</div>
+			<div class="grid_6">
+				<span>
+					<a href="#">login</a> /
+					<a href="#">join</a>
+				</span>
+			</div>
+		<div class="clear"></div>
+		</div>
+		<div id="menu">
+			<div class="grid_1">&nbsp;</div>
+			<div class="grid_10">
+				<ul>
+					<li>HOME</li>
+					<li>게시판
+						<ul>
+							<li>리스트</li>
+							<li>글쓰기</li>
+						</ul>
+					</li>
+					<li>방명록</li>
+				</ul>
+			</div>
+			<div class="grid_1">&nbsp;</div>
+		<div class="clear"></div>
+		</div>
+		<div id="content">
+			<div class="grid_12">
+				<div class="bxslider">
+					<div><img alt="big01" src="imgs/big01.jpg"> </div>
+					<div><img alt="big02" src="imgs/big02.jpg"> </div>
+					<div><img alt="big03" src="imgs/big03.jpg"> </div>
+					<div><img alt="big04" src="imgs/big04.jpg"> </div>
+					<div><img alt="big05" src="imgs/big05.jpg"> </div>				
+				</div>
+			</div>
+		<div class="clear"></div>
+		</div>
+		<div id="footer">
+			<div class="grid_12">
+				비트교육센터 서울시 서초구 서초동 1327-15 비트아카데미빌딩｜ 사업자등록번호 : 214-85-24928
+	(주)비트컴퓨터 서초지점 대표이사 : 조현정 / 문의 : 02-3486-9600 / 팩스 : 02-6007-1245
+	통신판매업 신고번호 : 제 서초-00098호 / 개인정보보호관리책임자 : 권도혁
+	Copyright (c) 비트캠프 All rights reserved.
+			</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

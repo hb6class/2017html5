@@ -1,0 +1,4 @@
+#header>div:nth-child(2)>span{
+		display: block;
+		text-align: right;
+	}
